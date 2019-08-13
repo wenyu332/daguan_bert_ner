@@ -1,0 +1,16 @@
+<pad>
+o
+a-B
+a-E
+a-S
+a-M
+b-B
+b-E
+b-S
+b-M
+c-B
+c-E
+c-S
+c-M
+<start>
+<eos>
