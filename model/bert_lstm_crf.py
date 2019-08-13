@@ -17,7 +17,7 @@ class BERT_LSTM_CRF(nn.Module):
         self.hidden_dim = hidden_dim
         self.word_embeds = BertModel(config=BertConfig.from_json_file(args.bert_config_json))
         # print(self.word_embeds)
-        self.word_embeds.load_state_dict(torch.load('./ckpts/9134_bert_weight.bin'))
+        self.word_embeds.load_state_dict(torch.load('./ckpts/bert_weight.bin'))
         self.lstm = nn.LSTM(embedding_dim, hidden_dim,
                             num_layers=rnn_layers, bidirectional=True, dropout=dropout_ratio, batch_first=True)
         self.rnn_layers = rnn_layers
