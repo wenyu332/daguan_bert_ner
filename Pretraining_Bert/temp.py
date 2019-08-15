@@ -4,8 +4,10 @@ def create_bert_datas():
     f.close()
     length=[]
     f = open('pretrain_train.txt', 'w')
-    for data in datas:
+    for data in datas[:-100000]:
         length.append(len(data.strip().split()))
+        f.write(data)
+    f.close()
     f.close()
     length=sorted(length)
     count=0
@@ -27,10 +29,10 @@ def create_bert_datas():
     # # f = open('/home/hing/Desktop/named_entity_recognition/normal_daguan_test.txt', 'r')
     # # datas = f.readlines()
     # # f.close()
-    # f = open('pretrain_dev.txt', 'w')
-    # for data in datas[-100000:]:
-    #     f.write(data)
-    # f.close()
+    f = open('pretrain_dev.txt', 'w')
+    for data in datas[-100000:]:
+        f.write(data)
+    f.close()
 # create_bert_datas()
 # f = open('/home/hing/bert/Pretraining_Bert_From_Scratch/lm_smallBert/data/pretrain_dev.txt',)
 # datas=f.readlines()
